@@ -19,7 +19,7 @@ aws cloudformation deploy --stack-name "${CFN_STACK_NAME}-elb" \
 --template-file "${FILE_PATH}/rt_elb.yml"
 
 aws cloudformation deploy --stack-name "${CFN_STACK_NAME}-s3" \
---template-file "${FILE_PATH}rt_s3.yml"
+--template-file "${FILE_PATH}/rt_s3.yml"
 
 aws cloudformation deploy --stack-name "${CFN_STACK_NAME}-rds" \
---template-file "${FILE_PATH}rt_rds.yml"
+--template-file "${FILE_PATH}/rt_rds.yml"
