@@ -11,11 +11,7 @@ jobs:
       - aws-cli/setup
       - run:
           name: Execute Create CFN Stack
-          command: |
-            CFN_STACK_NAME=RaiseTech-cfn
-            aws cloudformation deploy --stack-name "${CFN_STACK_NAME}" --template-file cloudformation/rt_vpc.yml
-            aws cloudformation deploy --stack-name "${CFN_STACK_NAME}-sg" --template-file cloudformation/rt_sg.yml
-            aws cloudformation deploy --stack-name "${CFN_STACK_NAME}-iam" --template-file cloudformation/rt_iam.yml --capabilities CAPABILITY_NAMED_IAM
+          command: cloudformation/deploy.sh
 
 workflows:
   infrastructure-ci-workflow:
